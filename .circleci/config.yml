@@ -38,4 +38,4 @@ jobs:
     executor: win/default
     steps:
       - checkout
-      - run: echo 'Hello, From Windows!'
+      - run: echo 'Hello,From Windows!'
