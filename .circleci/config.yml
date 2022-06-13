@@ -65,7 +65,8 @@ workflows:
   build1_and_build2:
     jobs:
       - build1
-      - build2:
+      - build2
+      - build3:
          requires:
            - build1
       - hold:
@@ -75,4 +76,4 @@ workflows:
             - build2
       - build3:
           requires:
-            - build1
+            - hold
