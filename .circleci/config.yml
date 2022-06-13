@@ -39,14 +39,8 @@ jobs:
     steps:
       - checkout
       - run: echo 'Hello,From Windows for build1!'
+  
   build2:
-    executor: win/default
-    steps:
-      - checkout
-      - run: echo 'Hello,From Windows for build2!'
-      
-
-  build3:
     docker:
       - image: cimg/base:2021.04
     steps:
@@ -60,13 +54,21 @@ jobs:
           name: The third Step
           command: |
             ls -al
-            echo '^^^The files in your repo^^^'    
+            echo '^^^The files in your repo^^^'  
+  
+  build3:
+    executor: win/default
+    steps:
+      - checkout
+      - run: echo 'Hello,From Windows for build2!'
+      
+
+  
 workflows:
   build1_and_build2:
     jobs:
       - build1
-      - build2
-      - build3:
+      - build2:
          requires:
            - build1
       - hold:
