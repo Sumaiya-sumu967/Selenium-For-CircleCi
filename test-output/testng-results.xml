@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="14" passed="14" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-04-11T10:11:40Z" name="Default suite" finished-at="2022-04-11T10:12:23Z" duration-ms="43720">
+    <groups>
+    </groups>
+    <test started-at="2022-04-11T10:11:40Z" name="Default test" finished-at="2022-04-11T10:12:23Z" duration-ms="43720">
+      <class name="Test.Search_Selenium">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Test.Search_Selenium@47c4ecdc]" started-at="2022-04-11T10:11:40Z" name="setup" finished-at="2022-04-11T10:11:45Z" duration-ms="5836" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="clickhotel()[pri:1, instance:Test.Search_Selenium@47c4ecdc]" started-at="2022-04-11T10:11:45Z" name="clickhotel" finished-at="2022-04-11T10:11:46Z" duration-ms="296" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickhotel -->
+        <test-method signature="clicksearchfield()[pri:2, instance:Test.Search_Selenium@47c4ecdc]" started-at="2022-04-11T10:11:46Z" name="clicksearchfield" finished-at="2022-04-11T10:11:48Z" depends-on-methods="Test.Search_Selenium.clickhotel" duration-ms="2238" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clicksearchfield -->
+        <test-method signature="sendname()[pri:3, instance:Test.Search_Selenium@47c4ecdc]" started-at="2022-04-11T10:11:48Z" name="sendname" finished-at="2022-04-11T10:11:50Z" depends-on-methods="Test.Search_Selenium.clicksearchfield" duration-ms="2148" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sendname -->
+        <test-method signature="selectname()[pri:4, instance:Test.Search_Selenium@47c4ecdc]" started-at="2022-04-11T10:11:50Z" name="selectname" finished-at="2022-04-11T10:11:59Z" depends-on-methods="Test.Search_Selenium.sendname" duration-ms="8580" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectname -->
+        <test-method signature="clickCheckin()[pri:5, instance:Test.Search_Selenium@47c4ecdc]" started-at="2022-04-11T10:11:59Z" name="clickCheckin" finished-at="2022-04-11T10:12:01Z" duration-ms="2399" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickCheckin -->
+        <test-method signature="clickCheckout()[pri:6, instance:Test.Search_Selenium@47c4ecdc]" started-at="2022-04-11T10:12:01Z" name="clickCheckout" finished-at="2022-04-11T10:12:03Z" depends-on-methods="Test.Search_Selenium.clickCheckin" duration-ms="2380" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickCheckout -->
+        <test-method signature="addroom()[pri:7, instance:Test.Search_Selenium@47c4ecdc]" started-at="2022-04-11T10:12:03Z" name="addroom" finished-at="2022-04-11T10:12:06Z" depends-on-methods="Test.Search_Selenium.clickCheckout" duration-ms="2311" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addroom -->
+        <test-method signature="addadults()[pri:8, instance:Test.Search_Selenium@47c4ecdc]" started-at="2022-04-11T10:12:06Z" name="addadults" finished-at="2022-04-11T10:12:08Z" depends-on-methods="Test.Search_Selenium.addroom" duration-ms="2231" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addadults -->
+        <test-method signature="addchild()[pri:9, instance:Test.Search_Selenium@47c4ecdc]" started-at="2022-04-11T10:12:08Z" name="addchild" finished-at="2022-04-11T10:12:10Z" depends-on-methods="Test.Search_Selenium.clickCheckout" duration-ms="2283" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addchild -->
+        <test-method signature="clickAgedropdown()[pri:10, instance:Test.Search_Selenium@47c4ecdc]" started-at="2022-04-11T10:12:10Z" name="clickAgedropdown" finished-at="2022-04-11T10:12:13Z" depends-on-methods="Test.Search_Selenium.addchild" duration-ms="2271" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickAgedropdown -->
+        <test-method signature="selectage()[pri:11, instance:Test.Search_Selenium@47c4ecdc]" started-at="2022-04-11T10:12:13Z" name="selectage" finished-at="2022-04-11T10:12:15Z" depends-on-methods="Test.Search_Selenium.clickAgedropdown" duration-ms="2267" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectage -->
+        <test-method signature="updatebutton()[pri:12, instance:Test.Search_Selenium@47c4ecdc]" started-at="2022-04-11T10:12:15Z" name="updatebutton" finished-at="2022-04-11T10:12:17Z" depends-on-methods="Test.Search_Selenium.selectage" duration-ms="2452" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updatebutton -->
+        <test-method signature="hotelcalss()[pri:13, instance:Test.Search_Selenium@47c4ecdc]" started-at="2022-04-11T10:12:17Z" name="hotelcalss" finished-at="2022-04-11T10:12:21Z" depends-on-methods="Test.Search_Selenium.updatebutton" duration-ms="3303" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- hotelcalss -->
+        <test-method signature="printhotelname()[pri:14, instance:Test.Search_Selenium@47c4ecdc]" started-at="2022-04-11T10:12:21Z" name="printhotelname" finished-at="2022-04-11T10:12:23Z" depends-on-methods="Test.Search_Selenium.updatebutton" duration-ms="2034" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- printhotelname -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:Test.Search_Selenium@47c4ecdc]" started-at="2022-04-11T10:12:23Z" name="teardown" finished-at="2022-04-11T10:12:23Z" duration-ms="625" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- Test.Search_Selenium -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
