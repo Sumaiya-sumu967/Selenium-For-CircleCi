@@ -6,33 +6,36 @@
         #jobs:
           #- hello/hello-build
 
-version: '2.1'
+#version: '2.1'
+#orbs:
+  #node: 'circleci/node:4.1'
+  #slack: circleci/slack@4.1
+#jobs:
+  #deploy:
+    #steps:
+      #- checkout
+      #- node/install-packages
+      #- run:
+          #command: npm run deploy
+      #- slack/notify:
+          #channel: qa_internal_bd
+          #event: pass
+          #template: success_tagged_deploy_1
+#workflows:
+  #deploy_and_notify:
+    #jobs:
+      #- deploy:
+          #context:
+            #- slack-secrets
+
+version: 2.1
+
 orbs:
-  slack: circleci/slack@4.1
+  win: circleci/windows@2.3.0
+
 jobs:
-  notify:
-    docker:
-      - image: 'cimg/base:stable'
+  build:
+    executor: win/default
     steps:
-      - slack/notify:
-          custom: |
-            {
-              "blocks": [
-                {
-                  "type": "section",
-                  "fields": [
-                    {
-                      "type": "plain_text",
-                      "text": "*This is a text From Sumaiya!*",
-                      "emoji": true
-                    }
-                  ]
-                }
-              ]
-            }
-          event: always
-workflows:
-  send-notification:
-    jobs:
-      - notify:
-          context: slack-secrets
+      - checkout
+      - run: echo 'Hello, From Windows!'
