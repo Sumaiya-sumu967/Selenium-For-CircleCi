@@ -62,7 +62,7 @@ jobs:
             echo '^^^The files in your repo^^^'  
   
 workflows:
-  build1_build2_and_build3:
+  Run_The_jobs:
     jobs:
       - build1
       - build2
