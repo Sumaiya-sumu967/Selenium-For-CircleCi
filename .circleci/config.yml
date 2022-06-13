@@ -56,10 +56,10 @@ jobs:
             echo 'Hello,From windows For build3!'
             echo 'This is the delivery pipeline'
       - run:
-          name: The third Step
+          name: The list of files
           command: |
             ls -al
-            echo '^^^The files in your repo^^^'  
+            echo '^^^The files from my repo^^^'  
   
 workflows:
   Run_The_jobs:
