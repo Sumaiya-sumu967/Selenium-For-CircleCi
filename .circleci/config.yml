@@ -34,8 +34,20 @@ orbs:
   win: circleci/windows@2.3.0
 
 jobs:
-  build:
+  build1:
     executor: win/default
     steps:
       - checkout
-      - run: echo 'Hello,From Windows!'
+      - run: echo 'Hello,From Windows for build1!'
+  build2:
+    executor: win/default
+    steps:
+      - checkout
+      - run: echo 'Hello,From Windows for build2!'
+workflows:
+  build1_and_build2:
+    jobs:
+      - build1
+      - build2:
+         requires:
+           - build1
