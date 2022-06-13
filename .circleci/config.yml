@@ -1,7 +1,38 @@
-version: 2.1
+#version: 2.1
+#orbs:
+    #hello: circleci/hello-build@0.0.5
+#workflows:
+    #"Hello":
+        #jobs:
+          #- hello/hello-build
+
+version: '2.1'
 orbs:
-    hello: circleci/hello-build@0.0.5
+  slack: circleci/slack@4.1
+jobs:
+  notify:
+    docker:
+      - image: 'cimg/base:stable'
+    steps:
+      - slack/notify:
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "plain_text",
+                      "text": "*This is a text From Sumaiya!*",
+                      "emoji": true
+                    }
+                  ]
+                }
+              ]
+            }
+          event: always
 workflows:
-    "Hello Workflow":
-        jobs:
-          - hello/hello-build
+  send-notification:
+    jobs:
+      - notify:
+          context: slack-secrets
