@@ -44,6 +44,23 @@ jobs:
     steps:
       - checkout
       - run: echo 'Hello,From Windows for build2!'
+      
+
+  build3:
+    docker:
+      - image: cimg/base:2021.04
+    steps:
+      - checkout
+      - run:
+          name: The First Step
+          command: |
+            echo 'Hello,From windows For build3!'
+            echo 'This is the delivery pipeline'
+      - run:
+          name: The third Step
+          command: |
+            ls -al
+            echo '^^^The files in your repo^^^'    
 workflows:
   build1_and_build2:
     jobs:
@@ -51,3 +68,11 @@ workflows:
       - build2:
          requires:
            - build1
+      - hold:
+          type: approval
+          requires:
+            - build1
+            - build2
+      - build3:
+          requires:
+            - hold
