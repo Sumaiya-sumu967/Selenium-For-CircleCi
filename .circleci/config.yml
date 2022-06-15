@@ -31,48 +31,48 @@
 version: 2.1
 
 orbs:
-  maven: circleci/maven@1.2.8
+  maven: circleci/maven@1.1.0
   browser-tools: circleci/browser-tools@1.2.4
   win: circleci/windows@2.3.0
 
 jobs:
 
   Run_The_build:
-    docker: 
+     docker: 
       - image: cimg/node:17.1.0
-    steps:
+     steps:
       - checkout
       - browser-tools/install-firefox
       - browser-tools/install-geckodriver   
-     - run:
-        name: intstall mvn 
-        command: |
+      - run:
+         name: intstall mvn 
+         command: |
           sudo apt update -y
           sudo apt install maven -y
   
   
-    - run:
-        name: checkc intstall  
-        command: |
-          firefox --version
-          mvn --version
-          java --version
+      - run:
+          name: checkc intstall  
+          command: |
+           firefox --version
+           mvn --version
+           java --version
     
-    - run:
-        name: checkc environment  
-        command: |
-        ls
-        echo $(browser)
-        echo $(runIdTest)
+      - run:
+          name: checkc environment  
+          command: |
+            ls
+            echo $(browser)
+            echo $(runIdTest)
     
-    - run:
-        name: checkc environment  
-        command: |
-        mvn clean test -D=testng.xml
+      - run:
+          name: checkc environment  
+          command: |
+            mvn clean test -D=testng.xml
         
-    - run:
-        name: Test Done  
-        command: | 
+      - run:
+          name: Test Done  
+          command: | 
            pwd
            ls
   build1:
