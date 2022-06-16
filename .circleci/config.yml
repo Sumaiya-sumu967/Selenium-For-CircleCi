@@ -115,11 +115,11 @@ workflows:
       - build3:
          requires:
            - build1
-      - hold:
-          type: approval
-          requires:
-            - build1
-            - build2
+      # - hold:
+      #     type: approval
+      #     requires:
+      #       - build1
+      #       - build2
       # - build3:
       #     requires:
       #       - hold
