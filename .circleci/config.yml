@@ -37,45 +37,9 @@ orbs:
 
 jobs:
 
-  Run_The_build:
-     docker: 
-      - image: 'cimg/node:17.1.0'
-     steps:
-      - checkout 
-      - browser-tools/install-chrome
-      - browser-tools/install-chromedriver 
-      - run:
-         name: intstall mvn 
-         command: |
-          sudo apt update -y
-          sudo apt install maven -y
+#
   
-  
-      - run:
-          name: check intstall  
-          command: |
-           google-chrome --version
-           chromedriver --version
-           mvn --version
-           java --version
-    
-      - run:
-          name: check environment  
-          command: |
-            ls
-            echo $(browser)
-            echo $(runIdTest)
-    
-      - run:
-          name: check environment  
-          command: |
-            mvn clean test -D=testng.xml
-        
-      - run:
-          name: Test Done  
-          command: | 
-           pwd
-           ls
+ #
   build1:
     executor: win/default
     steps:
@@ -109,7 +73,7 @@ jobs:
 workflows:
   Run_the_Builds:
     jobs:
-      - Run_The_build
+     #
       - build1
       - build2
       - build3:
