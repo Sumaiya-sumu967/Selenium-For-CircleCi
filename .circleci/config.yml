@@ -39,7 +39,7 @@ jobs:
 
   Run_The_build:
      docker: 
-      - image: cimg/node:17.1.0
+      - image: 'cimg/node:17.1.0'
      steps:
       - checkout 
       - browser-tools/install-chrome
@@ -60,14 +60,14 @@ jobs:
            java --version
     
       - run:
-          name: checkc environment  
+          name: check environment  
           command: |
             ls
             echo $(browser)
             echo $(runIdTest)
     
       - run:
-          name: checkc environment  
+          name: check environment  
           command: |
             mvn clean test -D=testng.xml
         
