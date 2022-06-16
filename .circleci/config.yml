@@ -42,8 +42,8 @@ jobs:
       - image: cimg/node:17.1.0
      steps:
       - checkout #1
-      - browser-tools/install-firefox
-      - browser-tools/install-geckodriver   
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver 
       - run:
          name: intstall mvn 
          command: |
