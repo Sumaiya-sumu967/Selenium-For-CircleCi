@@ -54,7 +54,8 @@ jobs:
       - run:
           name: check intstall  
           command: |
-           firefox --version
+           google-chrome --version
+           chromedriver --version
            mvn --version
            java --version
     
@@ -106,7 +107,7 @@ jobs:
 
   
 workflows:
-  build1_build2_and_build3:
+  Run_the_Builds:
     jobs:
       - Run_The_build
       - build1
